@@ -31,8 +31,9 @@ p <- df_pref_ranks %>%
   geom_bar(stat = "identity", width = 0.85, position = "dodge") +
   #geom_errorbar(aes(ymin=Mean-SD, ymax=Mean+SD), width=0.25, linewidth=0.25, colour="black", alpha=0.9) + 
   geom_text(angle=90, vjust=0.5, hjust=1.2, size=2, position = position_dodge(width = 0.85)) +
+  xlab("Preference order") + 
   ylab("Similarity (mean from perturbations)") +
-  scale_y_continuous(expand = c(0.00, 0.00), limits = c(0,1.2)) +
+  scale_y_continuous(expand = c(0.00, 0.00), breaks = seq(0,1,0.25), limits = c(0,1.2)) +
   scale_x_discrete(labels = latex_labels) + 
   scale_fill_manual(values = colors_for_bars) +
   guides(fill = guide_legend(title = "Swap strength")) + 

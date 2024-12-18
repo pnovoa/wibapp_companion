@@ -45,8 +45,9 @@ p_rank_comp <- rank_results_to_plot %>%
   ggplot(aes(x=Preference, y=Similarity)) + # label=Label)) +
   geom_bar(aes(fill=Fill), stat = "identity", width = 0.5, position = "dodge") +
   the_geom_text_for_labels +
-  ylab("Similarity") +
-  scale_y_continuous(expand = c(0.00, 0.00), limits = c(0,1.2)) +
+  ylab("Similarity to RUR ranking") +
+  xlab("Preference order") + 
+  scale_y_continuous(expand = c(0.00, 0.00), breaks = seq(0,1,0.25), limits = c(0,1.2)) +
   scale_x_discrete(labels = latex_labels) + 
   scale_fill_manual(values = colors_for_bars[c(2,1)]) +
   # facet_grid(Preference_label~Attitude, labeller = label_parsed) + 
@@ -93,7 +94,7 @@ p_kendall <- df_kendalls %>%
   scale_y_continuous(labels = scales::percent_format(scale = 1),
                      expand = c(0.00, 0.00), limits = c(0,110)) +
   scale_fill_manual(values = colors_for_bars) +
-  ylab("Percentage of total pairs (n = 402,624)") + 
+  ylab("Percentage of total pairs (n = 401,856)") + 
   xlab("Type of pairs") + 
   facet_grid(Preference_label~Indicator, labeller = labeller(Preference_label = label_parsed)) + 
   final_look
@@ -135,7 +136,7 @@ p_rank_diff <- df_rank_diff_plot %>%
                linewidth=0.2, 
                show.legend = FALSE) + 
   scale_fill_manual(values = colors_for_bars) +
-  ylab("Absolute rank difference (with respect to the RUR ranking)") + 
+  ylab("Absolute difference of ranks (with respect to RUR)") + 
   xlab("Ranking quartiles by RUR approach") + 
   facet_grid(Preference_label~Indicator, labeller = labeller(Preference_label = label_parsed)) + 
   final_look

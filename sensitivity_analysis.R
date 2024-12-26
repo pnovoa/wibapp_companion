@@ -19,10 +19,7 @@ df_pref_ranks <- df_pref_ranks %>%
 df_pref_ranks$Preference_label <- factor(df_pref_ranks$Preference, levels = names(label_par), labels = label_par)
 
 
-latex_labels <- c("TRDF" = TeX(r"(\textbf{O}$_1: w_T \geq w_R \geq w_D \geq w_F$)"),
-                  "RTDF" = TeX(r"(\textbf{O}$_2: w_R \geq w_T \geq w_D \geq w_F$)"),
-                  "TRFD" = TeX(r"(\textbf{O}$_3: w_T \geq w_R \geq w_F \geq w_D$)"),
-                  "RTFD" = TeX(r"(\textbf{O}$_4: w_R \geq w_T \geq w_F \geq w_D$)"))
+
 
 
 

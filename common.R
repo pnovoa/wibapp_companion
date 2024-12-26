@@ -13,18 +13,23 @@ levels_of_measures <- c("Spearman", "Kendall", "Blest's coeff.", "Weight. coeff.
 levels_of_attitudes <- c("Lower bound", "Upper bound", "Pessimistic attitude", "Neutral attitude", "Optimistic attitude")
 
 label_par <- c(
-  "TRDF" = TeX("$O_1: w_T \\geq w_R \\geq w_D \\geq w_F$"),
-  "RTDF" = TeX("$O_2: w_R \\geq w_T \\geq w_D \\geq w_F$"),
-  "TRFD" = TeX("$O_3: w_T \\geq w_R \\geq w_F \\geq w_D$"),
-  "RTFD" = TeX("$O_4: w_R \\geq w_T \\geq w_F \\geq w_D$")
+  "TRDF" = TeX("$POC_1: w_T \\geq w_R \\geq w_D \\geq w_F$"),
+  "RTDF" = TeX("$POC_2: w_R \\geq w_T \\geq w_D \\geq w_F$"),
+  "TRFD" = TeX("$POC_3: w_T \\geq w_R \\geq w_F \\geq w_D$"),
+  "RTFD" = TeX("$POC_4: w_R \\geq w_T \\geq w_F \\geq w_D$")
 )
+
+latex_labels <- c("TRDF" = TeX(r"(\textbf{POC}$_1: w_T \geq w_R \geq w_D \geq w_F$)"),
+                  "RTDF" = TeX(r"(\textbf{POC}$_2: w_R \geq w_T \geq w_D \geq w_F$)"),
+                  "TRFD" = TeX(r"(\textbf{POC}$_3: w_T \geq w_R \geq w_F \geq w_D$)"),
+                  "RTFD" = TeX(r"(\textbf{POC}$_4: w_R \geq w_T \geq w_F \geq w_D$)"))
 
 
 the_geom_text_for_labels <- geom_text(aes(label=Label, hjust=Hjust), angle=90, vjust=0.5, size=2.5, fontface="bold")
 
 
 final_look <- theme_clean(base_size = 10) +
-  theme(strip.text = element_text(face = "bold", size = 9),
+  theme(strip.text = element_text(face = "bold", size = 8),
         axis.text.x = element_text(angle=45, vjust = 1., hjust = 1.),
         panel.grid.major.y = element_line(colour = "gray60", linewidth = 0.3, linetype = "dotted"),
         plot.background = element_blank(),

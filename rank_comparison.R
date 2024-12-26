@@ -54,7 +54,7 @@ p_rank_comp <- rank_results_to_plot %>%
   facet_grid(Measure~Indicator) + 
   final_look
 
-ggsave(filename = "08_rur_comparison.pdf", plot = p_rank_comp, width = 8, height = 6.2)
+ggsave(filename = "08_rur_comparison.pdf", plot = p_rank_comp, width = 9, height = 6.5)
 
 
 
@@ -102,7 +102,7 @@ p_kendall <- df_kendalls %>%
 
 print(p_kendall)
 
-ggsave(filename = "10_rur_comparison_kendall.pdf", plot = p_kendall, width = 8, height = 5.8)
+ggsave(filename = "10_rur_comparison_kendall.pdf", plot = p_kendall, width = 8.1, height = 6)
 
 
 # GRÁFICO DE DISTRIBUCIÓN DE LA DIFERENCIA ENTRE RANKINGS
@@ -143,4 +143,4 @@ p_rank_diff <- df_rank_diff_plot %>%
 
 print(p_rank_diff)
 
-ggsave(filename = "09_rank_diff_dist.pdf", plot = p_rank_diff, width = 8, height = 5.8)
+ggsave(filename = "09_rank_diff_dist.pdf", plot = p_rank_diff, width = 8.1, height = 6)
